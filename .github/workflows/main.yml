@@ -30,6 +30,8 @@ jobs:
           if [ '${{ secrets.TELEGRAM_BOT_TOKEN }}' != '' ]; then sed -i "s/^TELEGRAM_BOT_TOKEN=.*$/TELEGRAM_BOT_TOKEN='${{ secrets.TELEGRAM_BOT_TOKEN }}'/" .env; fi
           if [ '${{ secrets.TELEGRAM_BOT_ENABLE }}' != '' ]; then sed -i "s/^TELEGRAM_BOT_ENABLE=.*$/TELEGRAM_BOT_ENABLE='${{ secrets.TELEGRAM_BOT_ENABLE }}'/" .env; fi
           if [ '${{ secrets.NOTICE_FREQ }}' != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${{ secrets.NOTICE_FREQ }}'/" .env; fi
+          if [ '${{ secrets.SCT_SEND_KEY }}' != '' ]; then sed -i "s/^SCT_SEND_KEY=.*$/SCT_SEND_KEY='${{ secrets.SCT_SEND_KEY }}'/" .env; fi
+          if [ '${{ secrets.SCT_ENABLE }}' != '' ]; then sed -i "s/^SCT_ENABLE=.*$/SCT_ENABLE='${{ secrets.SCT_ENABLE }}'/" .env; fi
           sed -i "s/^ON_GITHUB_ACTIONS=.*$/ON_GITHUB_ACTIONS=true/" .env
       - name: Renewing Freenom domains
         run: |
