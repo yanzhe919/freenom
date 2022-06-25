@@ -32,6 +32,10 @@ jobs:
           if [ '${{ secrets.NOTICE_FREQ }}' != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${{ secrets.NOTICE_FREQ }}'/" .env; fi
           if [ '${{ secrets.SCT_SEND_KEY }}' != '' ]; then sed -i "s/^SCT_SEND_KEY=.*$/SCT_SEND_KEY='${{ secrets.SCT_SEND_KEY }}'/" .env; fi
           if [ '${{ secrets.SCT_ENABLE }}' != '' ]; then sed -i "s/^SCT_ENABLE=.*$/SCT_ENABLE='${{ secrets.SCT_ENABLE }}'/" .env; fi
+          if [ '${{ secrets.WECHAT_CORP_ID }}' != '' ]; then sed -i "s/^WECHAT_CORP_ID=.*$/WECHAT_CORP_ID='${{ secrets.WECHAT_CORP_ID }}'/" .env; fi
+          if [ '${{ secrets.WECHAT_AGENT_ID }}' != '' ]; then sed -i "s/^WECHAT_AGENT_ID=.*$/WECHAT_AGENT_ID='${{ secrets.WECHAT_AGENT_ID }}'/" .env; fi
+          if [ '${{ secrets.WECHAT_CORP_SECRET }}' != '' ]; then sed -i "s/^WECHAT_CORP_SECRET=.*$/WECHAT_CORP_SECRET='${{ secrets.WECHAT_CORP_SECRET }}'/" .env; fi
+          if [ '${{ secrets.WECHAT_ENABLE }}' != '' ]; then sed -i "s/^WECHAT_ENABLE=.*$/WECHAT_ENABLE='${{ secrets.WECHAT_ENABLE }}'/" .env; fi
           sed -i "s/^ON_GITHUB_ACTIONS=.*$/ON_GITHUB_ACTIONS=true/" .env
       - name: Renewing Freenom domains
         run: |
